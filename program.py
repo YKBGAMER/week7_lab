@@ -3,6 +3,8 @@ class ManagementSystem:
         self.employees = []
 
     def addEmp(self, name, age, id, department):
+        if not all((name, age, id, department)):
+            raise ValueError("Missing values for employee!!!!")
         emp = {
             "name": name,
             "age": age,
@@ -10,7 +12,7 @@ class ManagementSystem:
             "department": department
         }
         self.employees.append(emp)
-        # print("Employee created successfully.")
+        print("Employee created successfully.")
 
     def getEmp(self, id):
         for emp in self.employees:
@@ -30,8 +32,8 @@ class ManagementSystem:
                 return
         print("Employee not found.")
 
-# ems = ManagementSystem()
-# ems.addEmp("John Doe", 30, 1001, "HR")
+ems = ManagementSystem()
+ems.addEmp("John Doe", 30, 1001, "HR")
 # ems.addEmp("Jane Smith", 25, 1002, "IT")
 
 # ems.getEmp(1001)
