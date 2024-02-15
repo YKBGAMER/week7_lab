@@ -21,7 +21,7 @@ class ManagementSystem:
                 print("Age:", emp["age"])
                 print("ID:", emp["id"])
                 print("Department:", emp["department"])
-                return
+                return emp
         print("Employee not found.")
 
     def deleteEmp(self, id):
